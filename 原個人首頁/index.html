@@ -1,0 +1,826 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Jeremy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Macondo" rel="stylesheet">
+
+    
+    <style>
+        * {
+            color: rgb(172, 172, 172);
+        }
+
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .button {
+            color: black;
+        }
+
+        #idExperience {
+            color: black;
+        }
+
+        #idLikeRankingPara {
+            font-size: x-large;
+            font-family: 'Macondo', cursive;
+        }
+
+        .w3-quarter.w3-section span {
+            color: black;
+        }
+
+        ::-webkit-input-placeholder {
+            color: black;
+        }
+
+        .w3-row-padding img {
+            margin-bottom: 12px;
+        }
+
+
+        /* Set the width of the sidebar to 120px */
+        .w3-sidebar {
+            width: 120px;
+            background: #222;
+        }
+        /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+        #main {
+            margin-left: 120px;
+        }
+        /* Remove margins from "page content" on small screens */
+        @media only screen and (max-width: 600px) {
+            #main {
+                margin-left: 0;
+            }
+        }
+
+        .NavImage {
+            filter: invert(0.55);
+            height:50px;
+        }
+
+        .imgLikeHert {
+            filter: invert(1);
+            width: 100px;
+        }
+
+        #PhotoContainer {
+            overflow: hidden;
+            height: 100px;
+            width: 100%;
+        }
+
+            #PhotoContainer img {
+                width: 100%;
+                opacity: 0.7;
+                filter: sepia(1);
+            }
+
+        #idMainPhotoContainer {
+            overflow: hidden;
+            height: 350px;
+            width: 100%;
+        }
+
+            #idMainPhotoContainer img {
+                width: 300px;
+            }
+
+        #idChoosePhotoDiv {
+            overflow: hidden;
+            width: 100%;
+        }
+
+            #idChoosePhotoDiv img {
+                width: 60px;
+                margin: 10px;
+                filter: opacity(0.5);
+            }
+
+        #idPhotoManipulationDiv {
+            width: 100%;
+            filter: invert(1);
+        }
+
+            #idPhotoManipulationDiv img {
+                margin-left: 30px;
+                margin-right: 30px;
+                width: 30px;
+            }
+
+
+        table {
+            border: white solid 2px;
+            border-collapse: collapse;
+        }
+
+            table td {
+                color: rgb(172, 172, 172);
+                width: 80px;
+                border: white solid 2px;
+            }
+
+            table tr:nth-child(even) {
+                background: black;
+            }
+
+            table tr:nth-child(odd) {
+                background: rgb(70,70,70);
+            }
+
+        #idDateSpan {
+            color: red;
+        }
+
+        #idNameSpan {
+            color: red;
+        }
+
+        #idPasswordSpan {
+            color: red;
+        }
+
+        #idDateSelectionDiv select{color:black;}
+
+        #idDateSelectionDiv select option{color:black;}
+
+       ::-webkit-scrollbar{
+           display: none;
+       }
+
+    </style>
+    
+</head>
+<body class="w3-black">
+    <!-- Icon Bar (Sidebar - hidden on small screens) -->
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <!-- Avatar image in top left corner -->
+        <div id="PhotoContainer">
+            <img src="images/MyPhoto4.jpg" />
+        </div>
+        
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black" style="overflow:auto">
+            <i class="fa fa-home w3-xxlarge"></i>
+            <p>HOME(AD)</p>
+        </a>
+
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-user w3-xxlarge"></i>
+            <p>ABOUT</p>
+        </a>
+
+        <a href="#MutiplicationTable" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <img class="NavImage" src="images/Nav-Calculator.svg" />
+            <p>9 x 9</p>
+        </a>
+        
+        <a href="#ValidationForm" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <img class="NavImage" src="images/Nav-checked.png" width="50"/>
+            <p>VALIDATE</p>
+        </a>
+
+        <a href="#LikeRanking" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <img class="NavImage" src="images/LikeBlack.png" width="50" />
+            <p>LIKE ME</p>
+        </a>
+
+        <a href="#idDateSelection" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <img class="NavImage" src="images/Nav-calendar.png" width="50" />
+            <p>DATE</p>
+        </a>
+
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-envelope w3-xxlarge"></i>
+            <p>CONTACT</p>
+        </a>
+    </nav>
+
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+        <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+            <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+            <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+            <!--<a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>-->
+            <a href="#MutiplicationTable" class="w3-bar-item w3-button" style="width:25% !important">9 x 9</a>
+            <a href="#ValidationForm" class="w3-bar-item w3-button" style="width:25% !important">VALIDATE</a>
+            <a href="#LikeRanking" class="w3-bar-item w3-button" style="width:25% !important">LIKE ME</a>
+            <a href="#idDateSelection" class="w3-bar-item w3-button" style="width:25% !important">DATE</a>
+            <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="w3-padding-large" id="main">
+        <!-- Header/Home -->
+        <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+            <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Jeremy Wang.</h1>
+            <p>Web Designer, Tax Advisor and Debator</p>
+            <div id="idMainPhotoContainer"><img src="images/MyPhoto4.jpg" alt="boy" class="w3-image" width="500"></div>
+            <div id="idChoosePhotoDiv">
+                <img id="idMyPhoto4" class="ClsMyPhoto" src="images/MyPhoto4.jpg" />
+                <img id="idMyPhoto1" class="ClsMyPhoto" src="images/MyPhoto1.jpg" />
+                <img id="idMyPhoto2" class="ClsMyPhoto" src="images/MyPhoto2.jpg" />
+                <img id="idMyPhoto3" class="ClsMyPhoto" src="images/MyPhoto3.jpg" />
+            </div>
+            <div id="idPhotoManipulationDiv">
+                <a><img id="idManImgPrevious" calss="ClsManipulationImg" src="images/Radio-rewind.png" /></a>
+                <a><img id="idManImgStop" calss="ClsManipulationImg" src="images/Radio-pause.png" /></a>
+                <a><img id="idManImgStart" calss="ClsManipulationImg" src="images/Radio-play-button.png" /></a>
+                <a><img id="idManImgNext" calss="ClsManipulationImg" src="images/Radio-fast-forward.png" /></a>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+            <h2 class="w3-text-light-grey">Jeremy</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <p>
+                Thsi is my Homework
+            </p>
+            <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
+            <p class="w3-wide">International Tax</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:70%"></div>
+            </div>
+            <p class="w3-wide">Web Design</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+            </div>
+            <p class="w3-wide">Debator</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:90%"></div>
+            </div><br>
+
+            <!--<div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey" >
+                <div class="w3-quarter w3-section">
+                    <span class="w3-xlarge">11+</span><br>
+                    <span>Partners</span>
+                </div>
+                <div class="w3-quarter w3-section">
+                    <span class="w3-xlarge">55+</span><br>
+                    <span>Projects Done</span> 
+                </div>
+                <div class="w3-quarter w3-section">
+                    <span class="w3-xlarge">89+</span><br>
+                    <span>Happy Clients</span> 
+                </div>
+                <div class="w3-quarter w3-section">
+                    <span class="w3-xlarge">150+</span><br>
+                    <span>Meetings</span> 
+                </div>
+            </div>-->
+
+            <a href="CVjer.pdf" class="w3-button w3-light-grey w3-padding-large w3-section">
+                <i class="fa fa-download"></i> Download Resume
+            </a>
+
+
+            <!-- Grid for pricing tables
+            <!--<h3 class="w3-padding-16 w3-text-light-grey">My Price</h3>
+            <div class="w3-row-padding" style="margin:0 -16px">
+                <div class="w3-half w3-margin-bottom">
+                    <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+                        <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+                        <li class="w3-padding-16">Web Design</li>
+                        <li class="w3-padding-16">Photography</li>
+                        <li class="w3-padding-16">5GB Storage</li>
+                        <li class="w3-padding-16">Mail Support</li>
+                        <li class="w3-padding-16">
+                            <h2>$ 10</h2>
+                            <span class="w3-opacity">per month</span>
+                        </li>
+                        <li class="w3-light-grey w3-padding-24">
+                            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="w3-half">
+                    <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+                        <li class="w3-dark-grey w3-xlarge w3-padding-32">Pro</li>
+                        <li class="w3-padding-16">Web Design</li>
+                        <li class="w3-padding-16">Photography</li>
+                        <li class="w3-padding-16">50GB Storage</li>
+                        <li class="w3-padding-16">Endless Support</li>
+                        <li class="w3-padding-16">
+                            <h2>$ 25</h2>
+                            <span class="w3-opacity">per month</span>
+                        </li>
+                        <li class="w3-light-grey w3-padding-24">
+                            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+                        </li>
+                    </ul>
+                </div>-->
+            <!-- End Grid/Pricing tables -->
+            <!--</div>-->
+            <!-- Testimonials -->
+            <h3 class="w3-padding-24 w3-text-light-grey">Education</h3>
+            <img src="images/NTPU.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px;height:60px">
+            <p><span class="w3-large w3-margin-right">NTPU.</span> </p>
+            <p>Public Finance.</p><br>
+
+            <img src="images/NCCU.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px;height:70px">
+            <p><span class="w3-large w3-margin-right">NCCU.</span> </p>
+            <p>Graduate Institution of Lawand Interdisciplinary Studies.</p>
+            <!-- End About Section -->
+        </div>
+
+
+        <!-- 9 * 9 Mutiplication Table -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="MutiplicationTable">
+            <h2 class="w3-text-light-grey">9 * 9 Mutiplication Table</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <div >
+                <script id="InsertTable" >
+                    //todo
+                    document.write("<table>")
+                    for (var i = 1; i <= 9; i++) {
+                        document.write("<tr>");
+                        for (var j = 1; j <= 9; j++) {
+                            a = j + "x" + i + "=" + i * j + " ";
+                            document.write("<td>" + a + "</td>");
+                        }
+                        document.write("</tr>");
+                    }
+                    document.write("</table><br>");
+                </script>
+            </div>
+        </div>
+
+
+        <!--Validation Form-->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="ValidationForm">
+            <h2 class="w3-text-light-grey">Validation Form</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <div>
+                <form method="get">
+                    <h4>Name:</h4>
+                    <p style="width:800px"><input id="idName" class="w3-input w3-padding-16" type="text" placeholder="Chinese Word Only" required name="Name"><span id="idNameSpan"></span></p>
+                    <h4>Password:</h4>
+                    <p style="width:800px"><input id="idPwd" class="w3-input w3-padding-16" type="text" placeholder="With lower case character, upper case character and longer than 6 " required name="Password"><span id="idPasswordSpan"></span></p>
+                    <h4>Date:</h4>
+                    <p style="width:800px"><input id="idDate" class="w3-input w3-padding-16" type="text" placeholder="yyyy/MM/dd" required name="Date"><span id="idDateSpan"></span></p>
+                    <input id="idSubmit" class="button" type="button" value="submit" />
+                    <input id="idDemo" class="button" type="button" value="Demo" />
+                </form>
+            </div>
+        </div>
+
+
+        <!--LikeRanking-->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="LikeRanking">
+            <h2 class="w3-text-light-grey">Like Ranking</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <div>
+                <img id="idLikeHert1" class="imgLikeHert" src="images/LikeWhite.png" />
+                <img id="idLikeHert2" class="imgLikeHert" src="images/LikeWhite.png" />
+                <img id="idLikeHert3" class="imgLikeHert" src="images/LikeWhite.png" />
+                <img id="idLikeHert4" class="imgLikeHert" src="images/LikeWhite.png" />
+                <img id="idLikeHert5" class="imgLikeHert" src="images/LikeWhite.png" />
+            </div>
+            <div>
+                <p id="idLikeRankingPara"></p>
+            </div>
+        </div>
+
+
+
+        <!--DateSelection-->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="idDateSelection">
+            <h2 class="w3-text-light-grey">DateSelection</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <div id="idDateSelectionDiv">
+                Year: <select id="idSelectYear" class="ClsDateSelection"></select>
+                Month: <select id="idSelectMonth" class="ClsDateSelection"></select>
+                Date: <select id="idSelectDate" class="ClsDateSelection"></select>
+            </div>
+        </div>
+
+            <!-- Portfolio Section -->
+            <!--<div class="w3-padding-64 w3-content" id="photos">
+            <h2 class="w3-text-light-grey">My Photos</h2>
+            <hr style="width:200px" class="w3-opacity">-->
+            <!-- Grid for photos -->
+            <!--<div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-half">
+                <img src="/w3images/wedding.jpg" style="width:100%">
+                <img src="/w3images/rocks.jpg" style="width:100%">
+                <img src="/w3images/sailboat.jpg" style="width:100%">
+            </div>-->
+            <!--<div class="w3-half">
+                <img src="/w3images/underwater.jpg" style="width:100%">
+                <img src="/w3images/chef.jpg" style="width:100%">
+                <img src="/w3images/wedding.jpg" style="width:100%">
+                <img src="/w3images/p6.jpg" style="width:100%">
+            </div>-->
+            <!-- End photo grid -->
+            <!--</div>-->
+            <!-- End Portfolio Section -->
+            <!--</div>-->
+            <!-- Contact Section -->
+            <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+                <h2 class="w3-text-light-grey">Contact Me</h2>
+                <hr style="width:200px" class="w3-opacity">
+
+                <div class="w3-section">
+                    <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Taipei, Taiwan</p>
+                    <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +886 921687452</p>
+                    <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: jeremy4555@yahoo.com.tw</p>
+                </div><br>
+                <!--<p>Lets get in touch. Send me a message:</p>
+
+                <form action="/action_page.php" target="_blank">
+                    <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+                    <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+                    <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+                    <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+                    <p>
+                        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+                            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                        </button>
+                    </p>
+                </form>-->
+                <!-- End Contact Section -->
+            </div>
+
+            <!-- Footer -->
+            <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+                <a href="https://www.facebook.com/jeremy45555"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+                <!--<i class="fa fa-instagram w3-hover-opacity"></i>
+                <i class="fa fa-snapchat w3-hover-opacity"></i>
+                <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                <i class="fa fa-twitter w3-hover-opacity"></i>-->
+                <!--<i class="fa fa-linkedin w3-hover-opacity"></i>-->
+                <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+                <!-- End footer -->
+            </footer>
+
+            <!-- END PAGE CONTENT -->
+    </div>
+
+
+
+
+    <script>
+        //Validation
+        var nameChangeFun = function () { this.style.color = "black" }
+        var passwordChangeFun = function () { this.style.color = "black" }
+        var dateChangeFun = function () { this.style.color = "black" }
+
+        var demo = function () {
+            document.getElementById("idName").value = "王選仲"
+            document.getElementById("idPwd").value = "AAaa1111"
+            document.getElementById("idDate").value = "2016/02/29"
+        }
+
+        var nameValidateFun = function () {
+            var name = document.getElementById("idName").value
+            var re1 = /^[\u4e00-\u9fa5]{2,}$/
+
+            if (!re1.test(name))
+                document.getElementById("idNameSpan").innerHTML = "You must enter with right format!"
+            else
+                document.getElementById("idNameSpan").innerHTML = ""
+        }
+
+        var passwordValidateFun = function () {
+            var password = document.getElementById("idPwd").value
+
+            var re2 = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,30}$/
+            if (!re2.test(password))
+                document.getElementById("idPasswordSpan").innerHTML = "You must enter with right format!"
+            else
+                document.getElementById("idPasswordSpan").innerHTML = ""
+        }
+
+        var dateValidateFun = function () {
+            var date = document.getElementById("idDate").value
+            var dateCompute = new Date(date).getDate();
+            var datstr = date.split("/")[2];
+
+
+            if (date == "" || !datstr || dateCompute != datstr)
+                document.getElementById("idDateSpan").innerHTML = "You must enter with right format!"
+            else
+                document.getElementById("idDateSpan").innerHTML = ""
+        }
+
+
+        var ValidateFun = function () {
+            //build name, password and date flags
+            var NameFlag = false;
+            var PwdFlag = false;
+            var DateFlag = false;
+
+            //catch name ,password and date value
+            var name = document.getElementById("idName").value
+            var password = document.getElementById("idPwd").value
+            var date = document.getElementById("idDate").value
+
+            //distinguish name flag
+            var re1 = /^[\u4e00-\u9fa5]{2,}$/
+
+            if (re1.test(name))
+                NameFlag = true;
+
+            //distinguish password flag
+            var re2 = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,30}$/
+            if (re2.test(password))
+                PwdFlag = true;
+
+            //distinguish Date flag
+            //var re3 = /^\d{4}[\/][.*\d]{1,2}[\/][.*\d]{1,2}$/
+            //var re3 = /(([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})[\/](((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)[\/](0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))-02-29)/
+            var dateCompute = new Date(date).getDate();
+            var datstr = date.split("/")[2];
+
+            if (dateCompute == datstr)
+                DateFlag = true;
+
+
+            //if two flag are true, validation will success
+            if (PwdFlag && NameFlag && DateFlag)
+                alert("Success");
+            else
+                alert("Unsuccess");
+        }
+
+
+        //Heart
+        function FunHeartChange(e) {
+            var TheEvent = e || window.event;
+            var CurHeart = TheEvent.currentTarget;
+            //var Hearts = document.getElementsByClassName("imgLikeHert");
+
+            for (var i = 1; i <= CurHeart.id[10] ; i++) {
+                document.getElementById("idLikeHert" + i).src = "images/LikeRed.png"
+                document.getElementById("idLikeHert" + i).style = "filter:none"
+                if (i == 1)
+                    document.getElementById("idLikeRankingPara").innerHTML = "You give " + i + " star";
+                else
+                    document.getElementById("idLikeRankingPara").innerHTML = "You give " + i + " stars";
+            }
+        }
+
+        function FunHeartLeave(e) {
+            var TheEvent = e || window.event;
+            var CurHeart = TheEvent.currentTarget;
+            //var Hearts = document.getElementsByClassName("imgLikeHert");
+
+            for (var i = 1; i <= CurHeart.id[10]; i++) {
+                document.getElementById("idLikeHert" + i).src = "images/LikeWhite.png"
+                document.getElementById("idLikeHert" + i).style = "filter:invert(1)"
+                document.getElementById("idLikeRankingPara").innerHTML = "";
+            }
+        }
+
+        function FunHeartClick(e) {
+            //註銷所有心上的onmouseenter事件
+            var Hearts = document.getElementsByClassName("imgLikeHert");
+            for (var i = 0; i < Hearts.length; i++) {
+                Hearts[i].removeEventListener("mouseenter", FunHeartChange)
+            }
+
+            //註銷所有心上的onmouseleave事件
+            for (var i = 0; i < Hearts.length; i++) {
+                Hearts[i].removeEventListener("mouseleave", FunHeartLeave)
+            }
+
+            TheEvent = e || window.event;
+            var CurHeart = TheEvent.currentTarget;
+
+            for (var i = 1; i <= CurHeart.id[10]; i++) {
+                document.getElementById("idLikeHert" + i).src = "images/LikeRed.png"
+                document.getElementById("idLikeHert" + i).style = "filter:none"
+                document.getElementById("idLikeRankingPara").innerHTML = "";
+                if (i == 1)
+                    document.getElementById("idLikeRankingPara").innerHTML = "You give " + i + " star";
+                else
+                    document.getElementById("idLikeRankingPara").innerHTML = "You give " + i + " stars";
+            }
+        }
+
+
+
+        //照片自動輪播
+        var IntervalID =false;
+        function FunStartChangImgInterval() {
+            if (IntervalID == false)
+                IntervalID = setInterval(ChangeImg, 3000);
+        }
+
+        function ChangeImg() {
+            var PresenImg = document.getElementById("idMainPhotoContainer").firstChild.src.split("/")[4];
+
+            if (PresenImg == "MyPhoto4.jpg")
+                document.getElementById("idMainPhotoContainer").firstChild.setAttribute("src", "images/MyPhoto1.jpg");
+            else if (PresenImg == "MyPhoto1.jpg")
+                document.getElementById("idMainPhotoContainer").firstChild.setAttribute("src", "images/MyPhoto2.jpg");
+            else if (PresenImg == "MyPhoto2.jpg")
+                document.getElementById("idMainPhotoContainer").firstChild.setAttribute("src", "images/MyPhoto3.jpg");
+            else if (PresenImg == "MyPhoto3.jpg")
+                document.getElementById("idMainPhotoContainer").firstChild.setAttribute("src", "images/MyPhoto4.jpg");
+        }
+
+        function HandPhotoLeave(e) {
+            FunStartChangImgInterval();
+            TheEvent = e || window.event;
+            TheEvent.currentTarget.setAttribute("style", "width: 60px;margin: 10px;filter:opacity(0.5);")
+        }
+
+
+        //依照選取照片變換
+        function HandPhotoChange(e) {
+            if (IntervalID != false)
+            {
+                clearInterval(IntervalID);
+                IntervalID = false
+            }
+
+            TheEvent = e || window.event;
+            var ImgNum = TheEvent.currentTarget.id[9];
+            TheEvent.currentTarget.setAttribute("style", "width: 60px;margin: 10px;filter:opacity(1);")
+            //TheEvent.currentTarget.style = "width: 60px;margin: 10px;opacity(1);"
+
+            if (ImgNum == 4)
+            {
+                document.getElementById("idMainPhotoContainer").firstChild.setAttribute("src", "images/MyPhoto4.jpg");
+            }
+            else if (ImgNum == 1)
+            {
+                document.getElementById("idMainPhotoContainer").firstChild.setAttribute("src", "images/MyPhoto1.jpg");
+            }
+            else if(ImgNum==2)
+            {
+                document.getElementById("idMainPhotoContainer").firstChild.setAttribute("src", "images/MyPhoto2.jpg");
+            }
+            else if(ImgNum==3)
+            {
+                document.getElementById("idMainPhotoContainer").firstChild.setAttribute("src", "images/MyPhoto3.jpg");
+            }
+        }
+
+        //以工具操作照片變換
+        function FunPreviousImg(){
+            var PresenImg = document.getElementById("idMainPhotoContainer").firstChild.src.split("/")[4];
+
+            if (PresenImg == "MyPhoto4.jpg")
+                document.getElementById("idMainPhotoContainer").firstChild.setAttribute("src", "images/MyPhoto3.jpg");
+            else if (PresenImg == "MyPhoto1.jpg")
+                document.getElementById("idMainPhotoContainer").firstChild.setAttribute("src", "images/MyPhoto4.jpg");
+            else if (PresenImg == "MyPhoto2.jpg")
+                document.getElementById("idMainPhotoContainer").firstChild.setAttribute("src", "images/MyPhoto1.jpg");
+            else if (PresenImg == "MyPhoto3.jpg")
+                document.getElementById("idMainPhotoContainer").firstChild.setAttribute("src", "images/MyPhoto2.jpg");
+        }
+
+        function FunStopImg(){
+            if (IntervalID != false)
+            {
+                clearInterval(IntervalID);
+                IntervalID = false;
+            }
+        }
+
+        function FunStartImg(){
+            FunStartChangImgInterval();
+        }
+
+        function FunNextImg(){
+            var PresenImg = document.getElementById("idMainPhotoContainer").firstChild.src.split("/")[4];
+
+            if (PresenImg == "MyPhoto4.jpg")
+                document.getElementById("idMainPhotoContainer").firstChild.setAttribute("src", "images/MyPhoto1.jpg");
+            else if (PresenImg == "MyPhoto1.jpg")
+                document.getElementById("idMainPhotoContainer").firstChild.setAttribute("src", "images/MyPhoto2.jpg");
+            else if (PresenImg == "MyPhoto2.jpg")
+                document.getElementById("idMainPhotoContainer").firstChild.setAttribute("src", "images/MyPhoto3.jpg");
+            else if (PresenImg == "MyPhoto3.jpg")
+                document.getElementById("idMainPhotoContainer").firstChild.setAttribute("src", "images/MyPhoto4.jpg");
+        }
+
+
+        //日期選擇
+        function FunDatePicker() {
+            document.getElementById("idSelectDate").innerHTML = "";
+
+            var y = document.getElementById("idSelectYear")
+            var yyyy = y.options[y.selectedIndex].value;
+            var MM = document.getElementById("idSelectMonth").selectedIndex;
+
+            i = 1;
+            while (true) {
+                var d = new Date(yyyy, MM, i)
+                if (d.getDate() != i) {
+                    break;
+                }
+
+                var newOption = document.createElement('option')
+                newOption.setAttribute('value', i);
+                newOption.innerHTML = i;
+                document.getElementById("idSelectDate").appendChild(newOption)
+                i++;
+            }
+        }
+
+
+        
+        //載入畫面時註冊事件
+        //todo
+        //var content = "document.write('<table>')for (var i = 1; i <= 9; i++) {document.write('<tr>');for (var j = 1; j <= 9; j++) {a = j + 'x' + i + '=' + i * j + ' ';document.write('<td>' + a + '</td>');}document.write('</tr>');}document.write('</table><br>');"
+
+        window.onload = function () {
+            //document.getElementById("idSubmit").onclick = ValidateFun;
+            document.getElementById("idName").onblur = nameValidateFun;
+            document.getElementById("idPwd").onblur = passwordValidateFun;
+            document.getElementById("idDate").onblur = dateValidateFun;
+
+            document.getElementById("idName").onchange = nameChangeFun;
+            document.getElementById("idPwd").onchange = passwordChangeFun;
+            document.getElementById("idDate").onchange = dateChangeFun;
+
+            document.getElementById("idDemo").onclick = demo;
+            //todo
+            //document.getElementById("InsertTable").innerHTML = content;
+
+
+            var Hearts = document.getElementsByClassName("imgLikeHert");
+            //document.getElementById().onmouseenter
+
+            //Change heart to red
+            for (var i = 0; i < Hearts.length; i++) {
+                Hearts[i].addEventListener("mouseenter", FunHeartChange)
+                //Hearts[i].onmouseenter = FunHeartChange;
+            }
+
+            //Change heart back to white
+            for (var i = 0; i < Hearts.length; i++) {
+                Hearts[i].addEventListener("mouseleave", FunHeartLeave)
+            }
+
+            //Fix red hearts
+            for (var i = 0; i < Hearts.length; i++) {
+                Hearts[i].addEventListener("click", FunHeartClick)
+            }
+
+            //automatically change Img
+            FunStartChangImgInterval();
+
+            for (var i = 1; i <= document.getElementsByClassName("ClsMyPhoto").length ; i++) {
+                document.getElementById("idMyPhoto" + i).addEventListener("mouseenter", HandPhotoChange)
+                document.getElementById("idMyPhoto" + i).addEventListener("mouseleave", HandPhotoLeave)
+            }
+
+            document.getElementById("idManImgPrevious").addEventListener("mousedown", FunPreviousImg)
+            document.getElementById("idManImgStop").addEventListener("mousedown", FunStopImg)
+            document.getElementById("idManImgStart").addEventListener("mousedown", FunStartImg)
+            document.getElementById("idManImgNext").addEventListener("mousedown", FunNextImg)
+
+
+            //Date Time Picker
+            for (var i = 2010; i <= 2020; i++) {
+                var newOption = document.createElement('option')
+                newOption.setAttribute('value', i);
+                newOption.innerHTML= i
+                document.getElementById("idSelectYear").appendChild(newOption)
+            }
+
+            for (var i = 1; i <= 12; i++) {
+                var newOption = document.createElement('option')
+                newOption.setAttribute('value', i);
+                newOption.innerHTML = i;
+                document.getElementById("idSelectMonth").appendChild(newOption)
+            }
+            
+            FunDatePicker();
+            document.getElementById("idSelectYear").addEventListener("change", FunDatePicker)
+            document.getElementById("idSelectMonth").addEventListener("change", FunDatePicker)
+
+        }
+
+        //document.addEventListener("DOMContentLoader", function f()
+        //{
+        //    //document.getElementById("idSubmit").onclick = ValidateFun;
+        //    document.getElementById("idPwd").onblur = passwordValidateFun;
+        //    document.getElementById("idDate").onblur = dateValidateFun;
+
+        //    document.getElementById("idName").onchange = nameChangeFun;
+        //    document.getElementById("idPwd").onchange = passwordChangeFun;
+        //    document.getElementById("idDate").onchange = dateChangeFun;
+
+        //    document.getElementById("idDemo").onclick = demo;
+        //    //todo
+        //    document.getElementById("InsertTable").innerHTML = content;
+        //})
+    </script>
+
+</body>
+</html>

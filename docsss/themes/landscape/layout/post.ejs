@@ -1,0 +1,5 @@
+<%- partial('_partial/article', {post: page, index: false}) %>
+
+<% if (page['math']){ %>
+<%- partial('_partial/mathjax') %>
+<% } %>
