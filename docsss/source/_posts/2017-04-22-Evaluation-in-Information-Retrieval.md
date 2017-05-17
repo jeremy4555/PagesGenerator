@@ -7,7 +7,8 @@ categories: Information Retrieval
 # 一、前言
 在評價資訊檢索時，人們在意的指標有很多面相，在過去比較重要的像是搜尋的數量跟速度，但隨著科技的進步，現在更趨向於不同面相精準，這也是本章節的重點。不過值得一提的是使用者介面(UI)、使用者體驗(UX)也是在這個領域當中有人持續關注及研究的議題，例如google使用的top-10 result method一個頁面中只回傳前十筆相關資料，又或者是[Searchme Visual Search](http://www.ajopaul.com/wp-content/uploads/2008/04/searchme.jpg)提供一個創新的搜尋結果可預覽的呈現方式，然而這些資訊實在太難以被量化研究，因此，本章將主要聚焦在精準度的呈現。<!--more-->
 
-![fig1.- Searchme Visual Search](http://www.ajopaul.com/wp-content/uploads/2008/04/searchme.jpg)
+{% asset_img SearchMe.JPG fig1.Searchme Visual Search%}
+
 # 二、假設與前提
 ## (一)、測試資料集的建立
 我們要評價一個檢索系統的精準度，我們需要以下三項測驗資源:
