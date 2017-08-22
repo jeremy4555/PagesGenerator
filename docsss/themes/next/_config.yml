@@ -6,7 +6,7 @@
 favicon: /favicon-20170422030939549.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Jeremy, Wang"
+keywords: "Goat Wang"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -154,8 +154,7 @@ social_icons:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-avatar: https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/15622747_1207299666013163_2211742436901915922_n.jpg?oh=f0ebf41169212e1b6bbdc1eeb65a6258&oe=597989BB
-
+avatar: /images/jeremy.jpg
 
 # Table Of Contents in the Sidebar
 toc:
@@ -286,15 +285,14 @@ mathjax:
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
-
+baidu_analytics: ff02436efc78f89df95a7ff74f2e4f77
 # Duoshuo ShortName
 #duoshuo_shortname:
 
 # Disqus
 disqus:
-  enable: false
-  shortname:
+  enable: true
+  shortname: Goat
   count: true
 
 # Hypercomments
@@ -337,7 +335,7 @@ changyan:
 #google_site_verification:
 
 # Google Analytics
-#google_analytics:
+google_analytics: UA-101626873-1 
 
 # Yandex Webmaster tools verification setting
 # See: https://webmaster.yandex.ru/

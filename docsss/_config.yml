@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Jeremy Wang's Blog
+title: Goat Wang's Blog
 subtitle: Learning Note
 description: a hardworking beginner of programming
-author: Jeremy Wang
+author: Goat Wang
 language: zh-tw
 timezone: 
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://jeremy4555.github.io/
+url: https://GoatWang.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -30,9 +30,9 @@ skip_render:
 
 # Social links
 social:
-  GitHub: https://github.com/jermy4555
+  GitHub: https://github.com/GoatWang
   # StackOverflow: https://stackoverflow.com/users/3959161/andy-chen?tab=profile
-  Linkedin: https://www.linkedin.com/in/%E9%81%B8%E4%BB%B2-%E7%8E%8B-35a164118/
+  Linkedin: https://www.linkedin.com/in/GoatWang
   Facebook: https://www.facebook.com/jeremy45555
 
 # Writing
@@ -78,7 +78,9 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/jeremy4555/jeremy4555.github.io.git
+  repo: https://github.com/GoatWang/GoatWang.github.io
   branch: master
+
+
 
 

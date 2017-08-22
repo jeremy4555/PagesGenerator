@@ -9,6 +9,21 @@ Indri is a powerful IR tool. For more information, you can go to their [home pag
 
 However, I still recommend you to use Indri through Linux system if it is possible. It is very convenient to set up a virtual machine, and installing Ubuntu is just a piece of cake nowadays. If you still insist in using it in windows like me, below I will show you how to deal with all troubles when using Visual Studio to build the solution in Indri directory.
 
+Tobe mentioned, if you use linux, tou can just run the scripts below to set it up. To check if you set up successfully, you can directly jump to [this part](#Finally)
+```
+sudo apt-get update
+sudo apt-get install libz-dev
+sudo apt-get install g++ 
+sudo apt-get install zlib1g-dev
+
+wget https://sourceforge.net/projects/lemur/files/lemur/indri-5.11/indri-5.11.tar.gz
+tar xzvf indri-5.11.tar.gz
+cd indri-5.11
+./configure
+make
+sudo make install
+```
+
 # Download and unzip Indri
 1. download: From [this page](https://sourceforge.net/projects/lemur/?source=typ_redirect), You can download indri-5.11.tar.gz.
 2. unzip: The tool I use is [7-zip](http://www.developershome.com/7-zip/). To be mentioned, it is recommended to open 7-zip first and use browser in 7-zip to change your directory to where you download Indri and then unzip it.
